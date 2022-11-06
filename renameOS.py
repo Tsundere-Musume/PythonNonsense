@@ -44,7 +44,7 @@ def argument_rename(name, path=os.getcwd()):
     files = (
         file for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))
     )
-    last = 1
+    last = 1  # Suffix to be added at the end
     for file in files:
         ext = extension_grabber(file)
         nfile = os.path.join(path, file)
