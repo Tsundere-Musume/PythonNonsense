@@ -49,7 +49,7 @@ def generate_filename(path, ext, charset, length):
     # Generates a new file name if the file name already exists
     while (path / name).exists():
         name = "".join(random.choices(charset, k=length)) + extensions
-    return name
+    return path/name
 
 
 # Appends a digit to a file if the file already exists
@@ -59,7 +59,7 @@ def get_valid_name(path, name, ext):
     new_name = name + extensions
     while (path / new_name).exists():
         new_name = f"{name}({digit}){extensions}"
-    return new_name
+    return path/new_name
 
 
 # checks if a path is valid or not and returns the absolute path if valid
